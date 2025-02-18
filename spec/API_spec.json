@@ -4,164 +4,14 @@
     "title": "Workflows API",
     "description": "A RESTful service for commonly used workflows.",
     "contact": {},
-    "version": "1.0.0",
-    "x-codegen-settings": {
-      "Nullify404": false,
-      "GenerateAsyncCode": true,
-      "UseMethodPrefix": false,
-      "UseModelPostfix": false,
-      "UseControllerPrefix": true,
-      "UseEnumPostfix": true,
-      "CollectParameters": false,
-      "UseConstructorsForConfig": false,
-      "UseCommonSDKLibrary": false,
-      "iOSUseAppInfoPlist": false,
-      "AndroidUseAppManifest": false,
-      "BodySerialization": 0,
-      "UserAgent": "{language} SDK, Version: {version}, on {os-info}",
-      "EnableAdditionalModelProperties": false,
-      "PreserveParameterOrder": true,
-      "AppendContentHeaders": true,
-      "iOSGenerateCoreData": false,
-      "GenerateInterfaces": false,
-      "NodeHttpClient": "NODE_REQUEST",
-      "ValidateRequiredParameters": false,
-      "JavaUsePropertiesConfig": false,
-      "Timeout": 0,
-      "StoreTimezoneInformation": false,
-      "EnablePHPComposerVersionString": false,
-      "EnableLogging": true,
-      "ArraySerialization": "Indexed",
-      "ModelSerializationScheme": "Json",
-      "UseExceptionPrefix": true,
-      "RunscopeEnabled": false,
-      "AndroidHttpClient": "ANDROID_OK",
-      "ObjCHttpClient": "UNIREST",
-      "CSharpHttpClient": "UNIREST",
-      "PHPHttpClient": "UNIREST",
-      "JavaHttpClient": "JAVA_OK",
-      "ParameterArrayFormat": "ParamArrayWithIndex",
-      "SecurityProtocols": [
-        "Ssl3",
-        "Tls"
-      ],
-      "GenerateTravisConfig": false,
-      "GenerateCircleConfig": false,
-      "GenerateAppveyorConfig": false,
-      "GenerateJenkinsConfig": false,
-      "EnableHttpCache": false,
-      "Retries": 0,
-      "RetryInterval": 1,
-      "GenerateAdvancedDocs": true,
-      "UnderscoreNumbers": true,
-      "UseSingletonPattern": true,
-      "DisableLinting": false,
-      "ApplyCustomizations": [],
-      "SortResources": false,
-      "AllowSkippingSSLCertVerification": false,
-      "DoNotSplitWords": [],
-      "EnableGlobalUserAgent": true,
-      "ReturnCompleteHttpResponse": false,
-      "GenerateModels": true,
-      "GenerateExceptions": true,
-      "IgnoreIfNullJson": false,
-      "DisableDocs": false,
-      "LiftParameterDescriptionFromCustomType": false,
-      "ThrowForHttpErrorStatusCodes": true,
-      "ResponseMapping": {
-        "Type": "Simple"
-      },
-      "ForceKeywordArgsInRuby": false,
-      "SymbolizeHashKeysInRuby": false,
-      "UsageExampleEndpoint": {
-        "Description": "",
-        "EndpointGroupName": "",
-        "EndpointName": ""
-      },
-      "IsLatestVersion": false,
-      "EnableImmutableModels": false,
-      "GenerateEnums": true,
-      "BackoffFactor": 2,
-      "StatusCodesToRetry": [
-        408,
-        413,
-        429,
-        500,
-        502,
-        503,
-        504,
-        521,
-        522,
-        524
-      ],
-      "RequestMethodsToRetry": [
-        "GET",
-        "PUT"
-      ],
-      "UserConfigurableRetries": true,
-      "UseEndpointMethodName": false,
-      "EncodeTemplateParameters": true,
-      "GenerateExamplesForOptionalFields": false,
-      "MultitargetDotnetVersions": false,
-      "BackoffMax": 0,
-      "RetryOnTimeout": true,
-      "EnableCookies": false,
-      "EnableJsonPassThroughForAny": false,
-      "PascalCaseEnumForCSharp": false,
-      "PascalCaseEnumForTypeScript": false,
-      "DisableMultipleAuth": false,
-      "AddSingleAuthDeprecatedCode": true,
-      "EnableExperimentalTypeCombinatorGeneration": false,
-      "ErrorTemplates": {},
-      "UseSecuritySchemeNameForSingleAuth": false,
-      "EnableModelKeywordArgsInRuby": false,
-      "NullifyEmptyResponses": false,
-      "ExtendedAdditionalPropertiesSupport": false,
-      "EnforceStandardizedCasing": false
-    },
-    "x-server-configuration": {
-      "default-environment": "production",
-      "default-server": "default",
-      "environments": [
-        {
-          "name": "production",
-          "servers": [
-            {
-              "name": "default",
-              "url": "https://{defaultHost}"
-            }
-          ]
-        },
-        {
-          "name": "GQL-Production",
-          "description": "",
-          "servers": [
-            {
-              "name": "default",
-              "url": "www.gql.com"
-            }
-          ]
-        }
-      ],
-      "parameters": [
-        {
-          "name": "defaultHost",
-          "schema": {
-            "type": "string",
-            "default": "hydra.workflows.dev.gen.adsrvr.org"
-          },
-          "example": "hydra.workflows.dev.gen.adsrvr.org"
-        }
-      ]
-    },
-    "x-image-uri": ""
+    "version": "1.0.0"
   },
   "servers": [
     {
       "url": "https://{defaultHost}",
       "variables": {
         "defaultHost": {
-          "default": "hydra.workflows.dev.gen.adsrvr.org"
+          "default": "int-api.sb.thetradedesk.com/hydra-workflows"
         }
       }
     },
@@ -234,7 +84,7 @@
             "url": "https://{defaultHost}",
             "variables": {
               "defaultHost": {
-                "default": "hydra.workflows.dev.gen.adsrvr.org"
+                "default": "int-api.sb.thetradedesk.com/hydra-workflows"
               }
             }
           },
@@ -242,39 +92,7 @@
             "url": "www.gql.com",
             "variables": {}
           }
-        ],
-        "x-operation-settings": {
-          "CollectParameters": false,
-          "AllowDynamicQueryParameters": false,
-          "AllowDynamicFormParameters": false,
-          "IsMultiContentStreaming": false,
-          "ErrorTemplates": {},
-          "SkipAdditionalHeaders": false
-        },
-        "x-unitTests": [
-          {
-            "request": {
-              "method": "POST",
-              "uri": "/campaign"
-            },
-            "expectedResponse": {
-              "x-allowExtraHeaders": true,
-              "x-bodyMatchMode": "NONE",
-              "x-arrayOrderedMatching": false,
-              "x-arrayCheckCount": false,
-              "x-matchResponseSchema": true,
-              "statusCode": "201",
-              "headers": {
-                "Content-Type": "application/json"
-              }
-            },
-            "x-testShouldPass": true,
-            "x-testEnabled": false,
-            "x-testName": "Test Create a new campaign with required fields",
-            "x-testDescription": "Create a new campaign with required fields"
-          }
-        ],
-        "x-server-name": "default"
+        ]
       }
     },
     "/seed": {
@@ -332,7 +150,7 @@
             "url": "https://{defaultHost}",
             "variables": {
               "defaultHost": {
-                "default": "hydra.workflows.dev.gen.adsrvr.org"
+                "default": "int-api.sb.thetradedesk.com/hydra-workflows"
               }
             }
           },
@@ -340,39 +158,7 @@
             "url": "www.gql.com",
             "variables": {}
           }
-        ],
-        "x-operation-settings": {
-          "CollectParameters": false,
-          "AllowDynamicQueryParameters": false,
-          "AllowDynamicFormParameters": false,
-          "IsMultiContentStreaming": false,
-          "ErrorTemplates": {},
-          "SkipAdditionalHeaders": false
-        },
-        "x-unitTests": [
-          {
-            "request": {
-              "method": "POST",
-              "uri": "/seed"
-            },
-            "expectedResponse": {
-              "x-allowExtraHeaders": true,
-              "x-bodyMatchMode": "NONE",
-              "x-arrayOrderedMatching": false,
-              "x-arrayCheckCount": false,
-              "x-matchResponseSchema": true,
-              "statusCode": "201",
-              "headers": {
-                "Content-Type": "application/json"
-              }
-            },
-            "x-testShouldPass": true,
-            "x-testEnabled": false,
-            "x-testName": "Test Create a new seed with required fields",
-            "x-testDescription": "Create a new seed with required fields"
-          }
-        ],
-        "x-server-name": "default"
+        ]
       }
     },
     "/gql": {
@@ -396,7 +182,7 @@
             "url": "https://{defaultHost}",
             "variables": {
               "defaultHost": {
-                "default": "hydra.workflows.dev.gen.adsrvr.org"
+                "default": "int-api.sb.thetradedesk.com/hydra-workflows"
               }
             }
           },
@@ -404,17 +190,7 @@
             "url": "www.gql.com",
             "variables": {}
           }
-        ],
-        "x-operation-settings": {
-          "CollectParameters": false,
-          "AllowDynamicQueryParameters": false,
-          "AllowDynamicFormParameters": false,
-          "IsMultiContentStreaming": false,
-          "ErrorTemplates": {},
-          "SkipAdditionalHeaders": false
-        },
-        "x-unitTests": [],
-        "x-server-name": "default"
+        ]
       }
     }
   },
@@ -458,41 +234,7 @@
           "NativeDisplay",
           "DOOH"
         ],
-        "type": "string",
-        "x-enum-elements": [
-          {
-            "name": "None",
-            "description": ""
-          },
-          {
-            "name": "Display",
-            "description": ""
-          },
-          {
-            "name": "Audio",
-            "description": ""
-          },
-          {
-            "name": "Video",
-            "description": ""
-          },
-          {
-            "name": "TV",
-            "description": ""
-          },
-          {
-            "name": "NativeVideo",
-            "description": ""
-          },
-          {
-            "name": "NativeDisplay",
-            "description": ""
-          },
-          {
-            "name": "DOOH",
-            "description": ""
-          }
-        ]
+        "type": "string"
       },
       "CampaignCreateROIGoalInput": {
         "title": "CampaignCreateROIGoalInput",
@@ -823,13 +565,19 @@
       }
     },
     "securitySchemes": {
-      "CustomHeaderAuth": {
-        "type": "apiKey",
-        "in": "header",
-        "name": "TTD-Auth"
+      "Bearer": {
+        "type": "http",
+        "description": "JWT Authorization header using the Bearer scheme",
+        "scheme": "bearer",
+        "bearerFormat": "jwt"
       }
     }
   },
+  "security": [
+    {
+      "Bearer": []
+    }
+  ],
   "tags": [
     {
       "name": "Campaign",
