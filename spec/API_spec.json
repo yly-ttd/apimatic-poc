@@ -572,9 +572,11 @@
       }
     }
   },
-  "security":{
-    "CustomHeaderAuth": {}
-  },
+  "security":[
+    {
+      "CustomHeaderAuth": {}
+    }
+  ],
   "tags": [
     {
       "name": "Campaign",
