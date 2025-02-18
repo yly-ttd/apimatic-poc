@@ -565,19 +565,13 @@
       }
     },
     "securitySchemes": {
-      "Bearer": {
-        "type": "http",
-        "description": "JWT Authorization header using the Bearer scheme",
-        "scheme": "bearer",
-        "bearerFormat": "jwt"
+      "CustomHeaderAuth":{
+        "type": "apiKey",
+        "in": "header",
+        "name": "TTD-Auth"
       }
     }
   },
-  "security": [
-    {
-      "Bearer": []
-    }
-  ],
   "tags": [
     {
       "name": "Campaign",
