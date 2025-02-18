@@ -6,9 +6,155 @@
     "contact": {},
     "version": "1.0.0",
     "x-codegen-settings": {
-      "UserAgent": "{language} SDK, Version: {version}, on OS {os-info}",
-      "BrandLabel": "The Trade Desk"
-    }
+      "Nullify404": false,
+      "GenerateAsyncCode": true,
+      "UseMethodPrefix": false,
+      "UseModelPostfix": false,
+      "UseControllerPrefix": true,
+      "UseEnumPostfix": true,
+      "CollectParameters": false,
+      "UseConstructorsForConfig": false,
+      "UseCommonSDKLibrary": false,
+      "iOSUseAppInfoPlist": false,
+      "AndroidUseAppManifest": false,
+      "BodySerialization": 0,
+      "UserAgent": "{language} SDK, Version: {version}, on {os-info}",
+      "EnableAdditionalModelProperties": false,
+      "PreserveParameterOrder": true,
+      "AppendContentHeaders": true,
+      "iOSGenerateCoreData": false,
+      "GenerateInterfaces": false,
+      "NodeHttpClient": "NODE_REQUEST",
+      "ValidateRequiredParameters": false,
+      "JavaUsePropertiesConfig": false,
+      "Timeout": 0,
+      "StoreTimezoneInformation": false,
+      "EnablePHPComposerVersionString": false,
+      "EnableLogging": true,
+      "ArraySerialization": "Indexed",
+      "ModelSerializationScheme": "Json",
+      "UseExceptionPrefix": true,
+      "RunscopeEnabled": false,
+      "AndroidHttpClient": "ANDROID_OK",
+      "ObjCHttpClient": "UNIREST",
+      "CSharpHttpClient": "UNIREST",
+      "PHPHttpClient": "UNIREST",
+      "JavaHttpClient": "JAVA_OK",
+      "ParameterArrayFormat": "ParamArrayWithIndex",
+      "SecurityProtocols": [
+        "Ssl3",
+        "Tls"
+      ],
+      "GenerateTravisConfig": false,
+      "GenerateCircleConfig": false,
+      "GenerateAppveyorConfig": false,
+      "GenerateJenkinsConfig": false,
+      "EnableHttpCache": false,
+      "Retries": 0,
+      "RetryInterval": 1,
+      "GenerateAdvancedDocs": true,
+      "UnderscoreNumbers": true,
+      "UseSingletonPattern": true,
+      "DisableLinting": false,
+      "ApplyCustomizations": [],
+      "SortResources": false,
+      "AllowSkippingSSLCertVerification": false,
+      "DoNotSplitWords": [],
+      "EnableGlobalUserAgent": true,
+      "ReturnCompleteHttpResponse": false,
+      "GenerateModels": true,
+      "GenerateExceptions": true,
+      "IgnoreIfNullJson": false,
+      "DisableDocs": false,
+      "LiftParameterDescriptionFromCustomType": false,
+      "ThrowForHttpErrorStatusCodes": true,
+      "ResponseMapping": {
+        "Type": "Simple"
+      },
+      "ForceKeywordArgsInRuby": false,
+      "SymbolizeHashKeysInRuby": false,
+      "UsageExampleEndpoint": {
+        "Description": "",
+        "EndpointGroupName": "",
+        "EndpointName": ""
+      },
+      "IsLatestVersion": false,
+      "EnableImmutableModels": false,
+      "GenerateEnums": true,
+      "BackoffFactor": 2,
+      "StatusCodesToRetry": [
+        408,
+        413,
+        429,
+        500,
+        502,
+        503,
+        504,
+        521,
+        522,
+        524
+      ],
+      "RequestMethodsToRetry": [
+        "GET",
+        "PUT"
+      ],
+      "UserConfigurableRetries": true,
+      "UseEndpointMethodName": false,
+      "EncodeTemplateParameters": true,
+      "GenerateExamplesForOptionalFields": false,
+      "MultitargetDotnetVersions": false,
+      "BackoffMax": 0,
+      "RetryOnTimeout": true,
+      "EnableCookies": false,
+      "EnableJsonPassThroughForAny": false,
+      "PascalCaseEnumForCSharp": false,
+      "PascalCaseEnumForTypeScript": false,
+      "DisableMultipleAuth": false,
+      "AddSingleAuthDeprecatedCode": true,
+      "EnableExperimentalTypeCombinatorGeneration": false,
+      "ErrorTemplates": {},
+      "UseSecuritySchemeNameForSingleAuth": false,
+      "EnableModelKeywordArgsInRuby": false,
+      "NullifyEmptyResponses": false,
+      "ExtendedAdditionalPropertiesSupport": false,
+      "EnforceStandardizedCasing": false
+    },
+    "x-server-configuration": {
+      "default-environment": "production",
+      "default-server": "default",
+      "environments": [
+        {
+          "name": "production",
+          "servers": [
+            {
+              "name": "default",
+              "url": "https://{defaultHost}"
+            }
+          ]
+        },
+        {
+          "name": "GQL-Production",
+          "description": "",
+          "servers": [
+            {
+              "name": "default",
+              "url": "www.gql.com"
+            }
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "name": "defaultHost",
+          "schema": {
+            "type": "string",
+            "default": "hydra.workflows.dev.gen.adsrvr.org"
+          },
+          "example": "hydra.workflows.dev.gen.adsrvr.org"
+        }
+      ]
+    },
+    "x-image-uri": ""
   },
   "servers": [
     {
@@ -18,6 +164,11 @@
           "default": "hydra.workflows.dev.gen.adsrvr.org"
         }
       }
+    },
+    {
+      "url": "www.gql.com",
+      "description": "",
+      "variables": {}
     }
   ],
   "paths": {
@@ -28,14 +179,19 @@
         ],
         "summary": "Create a new campaign with required fields",
         "description": "",
-        "operationId": "CreateCampaign",
+        "operationId": "Createanewcampaignwithrequiredfields",
         "parameters": [],
         "requestBody": {
           "description": "",
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateCampaignRequestBodyJson"
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/CampaignCreationInput"
+                  },
+                  {}
+                ]
               }
             }
           },
@@ -48,7 +204,14 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CreateCampaignResponse201Json"
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/Campaign"
+                    },
+                    {
+                      "description": "This is a campaign response"
+                    }
+                  ]
                 }
               }
             }
@@ -65,7 +228,53 @@
             }
           }
         },
-        "deprecated": false
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "https://{defaultHost}",
+            "variables": {
+              "defaultHost": {
+                "default": "hydra.workflows.dev.gen.adsrvr.org"
+              }
+            }
+          },
+          {
+            "url": "www.gql.com",
+            "variables": {}
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false,
+          "ErrorTemplates": {},
+          "SkipAdditionalHeaders": false
+        },
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "POST",
+              "uri": "/campaign"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "statusCode": "201",
+              "headers": {
+                "Content-Type": "application/json"
+              }
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": false,
+            "x-testName": "Test Create a new campaign with required fields",
+            "x-testDescription": "Create a new campaign with required fields"
+          }
+        ],
+        "x-server-name": "default"
       }
     },
     "/seed": {
@@ -82,7 +291,12 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateanewseedwithrequiredfieldsRequestBodyJson"
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/SeedCreationInput"
+                  },
+                  {}
+                ]
               }
             }
           },
@@ -112,7 +326,95 @@
             }
           }
         },
-        "deprecated": false
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "https://{defaultHost}",
+            "variables": {
+              "defaultHost": {
+                "default": "hydra.workflows.dev.gen.adsrvr.org"
+              }
+            }
+          },
+          {
+            "url": "www.gql.com",
+            "variables": {}
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false,
+          "ErrorTemplates": {},
+          "SkipAdditionalHeaders": false
+        },
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "POST",
+              "uri": "/seed"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "statusCode": "201",
+              "headers": {
+                "Content-Type": "application/json"
+              }
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": false,
+            "x-testName": "Test Create a new seed with required fields",
+            "x-testDescription": "Create a new seed with required fields"
+          }
+        ],
+        "x-server-name": "default"
+      }
+    },
+    "/gql": {
+      "get": {
+        "tags": [
+          "GQL"
+        ],
+        "summary": "GQL Query",
+        "description": "",
+        "operationId": "GQLQuery",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "https://{defaultHost}",
+            "variables": {
+              "defaultHost": {
+                "default": "hydra.workflows.dev.gen.adsrvr.org"
+              }
+            }
+          },
+          {
+            "url": "www.gql.com",
+            "variables": {}
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false,
+          "ErrorTemplates": {},
+          "SkipAdditionalHeaders": false
+        },
+        "x-unitTests": [],
+        "x-server-name": "default"
       }
     }
   },
@@ -156,7 +458,41 @@
           "NativeDisplay",
           "DOOH"
         ],
-        "type": "string"
+        "type": "string",
+        "x-enum-elements": [
+          {
+            "name": "None",
+            "description": ""
+          },
+          {
+            "name": "Display",
+            "description": ""
+          },
+          {
+            "name": "Audio",
+            "description": ""
+          },
+          {
+            "name": "Video",
+            "description": ""
+          },
+          {
+            "name": "TV",
+            "description": ""
+          },
+          {
+            "name": "NativeVideo",
+            "description": ""
+          },
+          {
+            "name": "NativeDisplay",
+            "description": ""
+          },
+          {
+            "name": "DOOH",
+            "description": ""
+          }
+        ]
       },
       "CampaignCreateROIGoalInput": {
         "title": "CampaignCreateROIGoalInput",
@@ -241,13 +577,27 @@
             "description": "The name of the Campaign."
           },
           "primaryChannel": {
-            "$ref": "#/components/schemas/CampaignCreationInputPrimaryChannel"
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/CampaignChannel"
+              },
+              {}
+            ]
           },
           "primaryGoal": {
-            "$ref": "#/components/schemas/CampaignCreationInputPrimaryGoal"
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/CampaignCreateROIGoalInput"
+              },
+              {}
+            ]
           },
           "campaignFlights": {
-            "$ref": "#/components/schemas/CampaignCreationInputCampaignFlights"
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CampaignFlightCreationInput"
+            },
+            "description": "The List of flights associated with the Campaign."
           }
         },
         "description": "Schema with required fields for creating a new campaign"
@@ -299,10 +649,20 @@
         "type": "object",
         "properties": {
           "keyphrases": {
-            "$ref": "#/components/schemas/ContextualDataInputKeyphrases"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Keyphrases",
+            "nullable": true
           },
           "urls": {
-            "$ref": "#/components/schemas/ContextualDataInputUrls"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Urls",
+            "nullable": true
           }
         }
       },
@@ -384,7 +744,12 @@
             "description": "Whether this is the default seed for this advertiser"
           },
           "targetingData": {
-            "$ref": "#/components/schemas/SeedCreationInputTargetingData"
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SeedTargetingDataInput"
+              },
+              {}
+            ]
           }
         },
         "description": "Required fields for creating a new seed"
@@ -394,19 +759,45 @@
         "type": "object",
         "properties": {
           "firstPartyDataInclusionIds": {
-            "$ref": "#/components/schemas/SeedTargetingDataInputFirstPartyDataInclusionIds"
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "description": "These are the AdvertiserTargetingDataIds for first party data.",
+            "nullable": true
           },
           "retailDataInclusion": {
-            "$ref": "#/components/schemas/SeedTargetingDataInputRetailDataInclusion"
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ThirdPartyDataInput"
+            },
+            "description": "RetailDataInclusion",
+            "nullable": true
           },
           "thirdPartyDataInclusion": {
-            "$ref": "#/components/schemas/SeedTargetingDataInputThirdPartyDataInclusion"
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ThirdPartyDataInput"
+            },
+            "description": "ThirdPartyDataInclusion",
+            "nullable": true
           },
           "contextualInclusion": {
-            "$ref": "#/components/schemas/SeedTargetingDataInputContextualInclusion"
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ContextualDataInput"
+              },
+              {}
+            ]
           },
           "countryFilterIds": {
-            "$ref": "#/components/schemas/SeedTargetingDataInputCountryFilterIds"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "CountryFilterIds",
+            "nullable": true
           }
         }
       },
@@ -429,120 +820,6 @@
             "description": "ThirdPartyDataBrandId"
           }
         }
-      },
-      "CreateCampaignRequestBodyJson": {
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/CampaignCreationInput"
-          },
-          {}
-        ]
-      },
-      "CreateCampaignResponse201Json": {
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/Campaign"
-          },
-          {
-            "description": "This is a campaign response"
-          }
-        ]
-      },
-      "CreateanewseedwithrequiredfieldsRequestBodyJson": {
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/SeedCreationInput"
-          },
-          {}
-        ]
-      },
-      "CampaignCreationInputPrimaryChannel": {
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/CampaignChannel"
-          },
-          {}
-        ]
-      },
-      "CampaignCreationInputPrimaryGoal": {
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/CampaignCreateROIGoalInput"
-          },
-          {}
-        ]
-      },
-      "CampaignCreationInputCampaignFlights": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/CampaignFlightCreationInput"
-        },
-        "description": "The List of flights associated with the Campaign."
-      },
-      "ContextualDataInputKeyphrases": {
-        "type": "array",
-        "items": {
-          "type": "string"
-        },
-        "description": "Keyphrases",
-        "nullable": true
-      },
-      "ContextualDataInputUrls": {
-        "type": "array",
-        "items": {
-          "type": "string"
-        },
-        "description": "Urls",
-        "nullable": true
-      },
-      "SeedCreationInputTargetingData": {
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/SeedTargetingDataInput"
-          },
-          {}
-        ]
-      },
-      "SeedTargetingDataInputFirstPartyDataInclusionIds": {
-        "type": "array",
-        "items": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "description": "These are the AdvertiserTargetingDataIds for first party data.",
-        "nullable": true
-      },
-      "SeedTargetingDataInputRetailDataInclusion": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/ThirdPartyDataInput"
-        },
-        "description": "RetailDataInclusion",
-        "nullable": true
-      },
-      "SeedTargetingDataInputThirdPartyDataInclusion": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/ThirdPartyDataInput"
-        },
-        "description": "ThirdPartyDataInclusion",
-        "nullable": true
-      },
-      "SeedTargetingDataInputContextualInclusion": {
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/ContextualDataInput"
-          },
-          {}
-        ]
-      },
-      "SeedTargetingDataInputCountryFilterIds": {
-        "type": "array",
-        "items": {
-          "type": "string"
-        },
-        "description": "CountryFilterIds",
-        "nullable": true
       }
     },
     "securitySchemes": {
@@ -550,7 +827,17 @@
         "type": "http",
         "description": "JWT Authorization header using the Bearer scheme",
         "scheme": "bearer",
-        "bearerFormat": "jwt"
+        "bearerFormat": "jwt",
+        "x-additional-headers": [
+          {
+            "name": "TTD-Auth",
+            "description": "security token header",
+            "required": true,
+            "schema": {
+              "default": ""
+            }
+          }
+        ]
       }
     }
   },
@@ -566,6 +853,10 @@
     },
     {
       "name": "Seed",
+      "description": ""
+    },
+    {
+      "name": "GQL",
       "description": ""
     }
   ]
