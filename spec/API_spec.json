@@ -27,9 +27,6 @@
         "tags": [
           "Campaign"
         ],
-        "security": {
-          "TTDHeaderAuth": {}
-        },
         "summary": "Create a new campaign with required fields",
         "description": "",
         "operationId": "Createanewcampaignwithrequiredfields",
@@ -103,9 +100,6 @@
         "tags": [
           "Seed"
         ],
-        "security": {
-          "TTDHeaderAuth": {}
-        },
         "summary": "Create a new seed with required fields",
         "description": "",
         "operationId": "Createanewseedwithrequiredfields",
@@ -172,9 +166,6 @@
         "tags": [
           "GQL"
         ],
-        "security": {
-          "TTDHeaderAuth": {}
-        },
         "summary": "GQL Query",
         "description": "",
         "operationId": "GQLQuery",
@@ -583,7 +574,7 @@
   },
   "security":[
     {
-      "TTDHeaderAuth": {}
+      "TTDHeaderAuth": []
     }
   ],
   "tags": [
